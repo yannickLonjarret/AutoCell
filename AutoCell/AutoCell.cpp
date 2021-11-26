@@ -136,43 +136,10 @@ int main(){
     cout << "O - living cell" << endl;
     cout << ". - dead cell" << endl;
     cout << endl;
-    cout << "Enter the number of cells, or 'r' to read cells from file: ";
+    cout << "Enter the number of cells: ";
     cin >> nc;
     cout << endl;
 
-    if ( nc == "r" )
-      {
-    while (true)
-      {
-
-        cout << "Enter name of file to read from: "<<endl;
-        cin  >> filename;
-
-        ifstream readfile(filename);
-        if ( readfile.is_open() )
-          {
-        string fileline,xx,yy;
-
-        while (getline(readfile,fileline))
-          {
-            stringstream ss(fileline);
-
-            getline(ss,xx,' ');
-            getline(ss,yy,' ');
-
-            x = stoi(xx);
-            y = stoi(yy);
-
-            gridOne[x][y] = true;
-          }
-        break;
-          } else {
-          cout << "No such file, try again." << endl;
-        }
-      }
-      }
-    else
-      {
 
     for(int i=0;i<stoi(nc);i++)
       {
