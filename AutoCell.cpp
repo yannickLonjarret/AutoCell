@@ -144,7 +144,7 @@ void DebutSimulation(){
     }while(reponse != 'o' && reponse != 'O' && reponse != '0');
 }
 
-void DeroulementProgramme(){
+int main(){
     int nombreDeCellulesInitiales, nombreEtapes;
     bool grille[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1] = {};
 
@@ -154,9 +154,5 @@ void DeroulementProgramme(){
     RemplirGrille(nombreDeCellulesInitiales, grille);
     DebutSimulation();
     Simulation(nombreEtapes, grille);
-}
-
-int main(){
-    DeroulementProgramme();
     return 0;
 }
