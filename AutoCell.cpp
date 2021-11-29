@@ -1,10 +1,14 @@
 #include <iostream>
 #include <windows.h>
+#include <chrono>
+#include <thread>
 
 #define VIVANT TRUE
 #define MORT FALSE
 #define _TAILLE_GRILLE 15
+#define _PAUSE 1000
 
+using std::this_thread::sleep_for;
 using namespace std;
 
 void AfficherGrille(bool grille[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1]){
@@ -78,11 +82,8 @@ void VerifCoordonnee(int numeroCellule, int &ligne, int &colonne){
 }
 
 void Continuer(){
-    char reponse;
-    do{
-        cout << "Comntinuer ? (O/N) ";
-        cin >> reponse;
-    }while(reponse != 'o' && reponse != 'O' && reponse != '0');
+    sleep_for(chrono::milliseconds(_PAUSE));
+    cout << "\n" << endl;
 }
 
 void Simulation(int nombreEtapes, bool (&grille)[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1]){
