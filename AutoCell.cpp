@@ -136,7 +136,7 @@ void RemplirGrille(int nombreDeCellulesInitiales, bool (&grille)[_TAILLE_GRILLE+
     }
 }
 
-void DebutSimulation(){
+void ConfirmationSimulation(){
     char reponse;
     do{
         cout << "Commencer la simulation ? (O/N) ";
@@ -152,7 +152,7 @@ int main(){
     nombreEtapes = NombreEtapes();
     nombreDeCellulesInitiales = NombreDeCellulesInitiales();
     RemplirGrille(nombreDeCellulesInitiales, grille);
-    DebutSimulation();
+    ConfirmationSimulation();
     Simulation(nombreEtapes, grille);
     return 0;
 }
