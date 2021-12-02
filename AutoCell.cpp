@@ -71,7 +71,7 @@ void MajGrille(bool (&grille)[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1]){
 
     for(int ligne = 1; ligne < _TAILLE_GRILLE; ligne++) {
         for(int colonne = 1; colonne < _TAILLE_GRILLE; colonne++) {
-            nombreDeVoisinsVivants = NombreDeVoisinsVivants(ligne, colonne, grille);
+            nombreDeVoisinsVivants = NombreVoisinVivant(ligne, colonne, grille);
             grilleTemp[ligne][colonne] = ChangementEtat(nombreDeVoisinsVivants, grille[ligne][colonne]);
         }
     }
