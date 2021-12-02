@@ -45,15 +45,22 @@ bool ChangementEtat(int nombreDeVoisinsVivants, bool EtatAvant) {
     return EtatApres;
 }
 
-int NombreDeVoisinsVivants(int ligne, int colonne, bool grille[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1]) {
+int NombreVoisinVivant(int ligne, int colonne, bool grille[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1]) {
     int nombreDeVoisinsVivants = 0;
 
-    for(int ligneCelluleVoisine = -1; ligneCelluleVoisine <= 1; ligneCelluleVoisine++){
-        for(int colonneCelluleVoisine = -1; colonneCelluleVoisine <= 1; colonneCelluleVoisine++){
-            if(!(ligneCelluleVoisine == 0 && colonneCelluleVoisine == 0)){
-                if(grille[ligne+ligneCelluleVoisine][colonne+colonneCelluleVoisine] == VIVANT){
+    for(int ligneCelluleVoisine = -1; ligneCelluleVoisine <= 1; ligneCelluleVoisine++)
+    {
+        for(int colonneCelluleVoisine = -1; colonneCelluleVoisine <= 1; colonneCelluleVoisine++)
+        {
+            if(!(ligneCelluleVoisine == 0 && colonneCelluleVoisine == 0))
+            {
+                if(grille[ligne+ligneCelluleVoisine][colonne+colonneCelluleVoisine] == VIVANT)
+                {
                     nombreDeVoisinsVivants++;
-    }}}}
+                }
+            }
+        }
+    }
     return nombreDeVoisinsVivants;
 }
 
