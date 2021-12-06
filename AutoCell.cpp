@@ -157,6 +157,7 @@ void InitialisationGrille(int &nombreEtapes, bool (&grille)[_TAILLE_GRILLE+1][_T
     nombreEtapes = NombreEtapes();
     nombreDeCellulesInitiales = NombreDeCellulesInitiales();
     RemplirGrille(nombreDeCellulesInitiales, grille);
+    ConfirmationSimulation();
 }
 
 int main(){
@@ -165,7 +166,6 @@ int main(){
 
     AfficherRegles();
     InitialisationGrille(nombreEtapes, grille);
-    ConfirmationSimulation();
     Simulation(nombreEtapes, grille);
 
     return 0;
