@@ -151,15 +151,22 @@ void ConfirmationSimulation(){
     }while(reponse != 'o' && reponse != 'O' && reponse != '0');
 }
 
-int main(){
-    int nombreDeCellulesInitiales, nombreEtapes;
-    bool grille[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1] = {};
+void InitialisationGrille(int &nombreEtapes, bool (&grille)[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1]){
+    int nombreDeCellulesInitiales;
 
-    AfficherRegles();
     nombreEtapes = NombreEtapes();
     nombreDeCellulesInitiales = NombreDeCellulesInitiales();
     RemplirGrille(nombreDeCellulesInitiales, grille);
+}
+
+int main(){
+    int nombreEtapes;
+    bool grille[_TAILLE_GRILLE+1][_TAILLE_GRILLE+1] = {};
+
+    AfficherRegles();
+    InitialisationGrille(nombreEtapes, grille);
     ConfirmationSimulation();
     Simulation(nombreEtapes, grille);
+
     return 0;
 }
