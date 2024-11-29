@@ -9,7 +9,6 @@ This project is a C++ implementation of **Conway's Game of Life**, developed as 
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Rules of the Game](#rules-of-the-game)
-4. [How to Run](#how-to-run)
 5. [Code Structure](#code-structure)
 6. [Acknowledgments](#acknowledgments)
 
@@ -41,39 +40,6 @@ This implementation allows users to:
 2. **Overpopulation**: A live cell with more than three live neighbors dies.
 3. **Survival**: A live cell with two or three live neighbors survives.
 4. **Reproduction**: A dead cell with exactly three live neighbors becomes a live cell.
-
----
-
-## How to Run
-
-### Prerequisites
-
-- A C++ compiler (e.g., g++, MSVC).
-- The `windows.h` library for system-specific operations (tested on Windows).
-
-### Steps
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/game-of-life.git
-   cd game-of-life
-   ```
-
-2. **Compile the Code**:
-   ```bash
-   g++ game_of_life.cpp -o game_of_life
-   ```
-
-3. **Run the Executable**:
-   ```bash
-   ./game_of_life
-   ```
-
-4. Follow the prompts to:
-   - Enter the number of steps for the simulation.
-   - Define the initial live cells by entering their coordinates.
-   - Watch the simulation evolve!
-
 ---
 
 ## Code Structure
